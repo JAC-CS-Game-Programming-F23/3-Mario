@@ -54,8 +54,6 @@ export default class LevelMaker {
 			LevelMaker.generateColumn(tiles, x, height, tileSet, topperSet);
 		}
 
-		tiles[10][18] = new Tile(18, 10, TileType.Ground, true, tileSet, topperSet);
-
 		const tileSets = LevelMaker.generateSprites(
 			images.get(ImageName.Tiles),
 			LevelMaker.TILE_SETS_WIDTH,
