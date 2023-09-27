@@ -433,7 +433,7 @@ AABB is useful for detecting collision between two **moving** entities, but we c
       - The reason this is split up into two difference functions is because if it were the same implementation as `PlayerWalkingState::isTileCollisionBelow()` or `PlayerIdleState::isTileCollisionBelow()`, the player would be able to get "stuck" on walls in mid-air when falling due to how the logic is implemented.
   - Beside us when in all states:
     - `Player::checkLeftCollisions()` and `Player::checkRightCollisions()`
-      - At first, it might make sense to stick these calls in `Player::update()` since they're happening for all states. Upon closer inspection, please notices that these get called in different ways depending on the state.
+      - At first, it might make sense to stick these calls in `Player::update()` since they're happening for all states. Upon closer inspection, please notice that these get called in different ways depending on the state.
 
   as opposed to checking for collisions in all directions in all states!
 
