@@ -29,7 +29,6 @@ export default class PlayerWalkingState extends State {
 		this.player.checkLeftCollisions();
 		this.player.checkRightCollisions();
 		this.player.checkEntityCollisions();
-		this.player.chargeJump(dt);
 
 		if (!keys.a && !keys.d && Math.abs(this.player.velocity.x) === 0) {
 			this.player.changeState(PlayerStateName.Idle);
@@ -45,6 +44,10 @@ export default class PlayerWalkingState extends State {
 		}
 		else {
 			this.player.stop();
+		}
+
+		if (keys[' ']) {
+			this.player.changeState(PlayerStateName.Jumping);
 		}
 	}
 

@@ -19,8 +19,8 @@ export default class PlayerJumpingState extends State {
 		this.animation = new Animation([2], 1);
 	}
 
-	enter(parameters) {
-		this.player.velocity.y = this.player.jumpForce.y * parameters.jumpCharge;
+	enter() {
+		this.player.velocity.y = this.player.jumpForce.y;
 		this.player.currentAnimation = this.animation;
 	}
 

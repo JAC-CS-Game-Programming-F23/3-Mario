@@ -27,7 +27,6 @@ export default class PlayerIdleState extends State {
 		this.player.checkLeftCollisions();
 		this.player.checkRightCollisions();
 		this.player.checkEntityCollisions();
-		this.player.chargeJump(dt);
 
 		if (!this.isTileCollisionBelow()) {
 			this.player.changeState(PlayerStateName.Falling);
@@ -37,6 +36,9 @@ export default class PlayerIdleState extends State {
 			this.player.changeState(PlayerStateName.Walking);
 		}
 
+		if (keys[' ']) {
+			this.player.changeState(PlayerStateName.Jumping);
+		}
 	}
 
 	isTileCollisionBelow() {

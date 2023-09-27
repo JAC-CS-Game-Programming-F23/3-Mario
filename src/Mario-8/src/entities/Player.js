@@ -153,23 +153,4 @@ export default class Player extends Entity {
 			}
 		});
 	}
-
-	chargeJump(dt) {
-		if (keys[' ']) {
-			this.isChargingJump = true;
-		}
-
-		if (this.isChargingJump && this.jumpCharge < this.jumpChargeMax) {
-			this.jumpCharge += dt;
-		}
-
-		if ((!keys[' '] && this.isChargingJump) || this.jumpCharge >= this.jumpChargeMax) {
-			this.changeState(PlayerStateName.Jumping, {
-				jumpCharge: this.jumpCharge * 10,
-			});
-
-			this.jumpCharge = 0;
-			this.isChargingJump = false;
-		}
-	}
 }
