@@ -541,11 +541,11 @@ Mario-9 adds 3 new _game objects_ to the game: blocks, bushes, and coins! The te
 
 Here are the objects our game has so far:
 
-|              | 📦 Block | 🌳 Bush  | 💰 Coin  |
-| ------------ | :-----: | :-----: | :-----: |
-| 🗻 Solid      | `true`  | `false` | `false` |
-| 🎯 Collidable | `true`  | `false` | `true`  |
-| 🍴 Consumable | `false` | `false` | `true`  |
+| Property       | 📦 Block | 🌳 Bush | 💰 Coin |
+| -------------- | :-------: | :------: | :------: |
+| 🗻 Solid      |  `true`   | `false`  | `false`  |
+| 🎯 Collidable |  `true`   | `false`  |  `true`  |
+| 🍴 Consumable |  `false`  | `false`  |  `true`  |
 
 - **Solid**: Entities cannot overlap the object.
 - **Collidable**: Entities can overlap the object.
@@ -555,7 +555,7 @@ Here are the objects our game has so far:
 
 - If you look in `src/objects/` you will find 4 new files:
   - `GameObject.js`: The class that all the game objects in this folder should extend. Inside, you will find methods to update, render, and detect collisions.
-  - `Block.js`: A"box" that the player can hit from beneath to reveal a coin.
+  - `Block.js`: A "box" that the player can hit from beneath to reveal a coin.
   - `Bush.js`: A background asset that does not have any behaviour. It's simply for aesthetics.
   - `Coin.js`: A collectible item that the player can consume to gain points.
 - `LevelMaker` is where the game objects are spawned during level creation:
